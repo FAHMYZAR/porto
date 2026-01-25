@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Habit Tracker",
+    "description": "Habit Tracker. paste jadwal atau kebiasaan baru disini. Dia akan bantu menyusun dan mengingatkan!",
+    "image": "dist/img/galeri/habit.png",
+    "tags": [
+      "Mobile App",
+      "Productivity",
+      "Habit Tracking"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "WasteTrash",
+    "description": "Aplikasi mobile untuk pengelolaan sampah dengan fitur tracking, edukasi, dan reward system untuk mendorong masyarakat peduli lingkungan.",
+    "image": "dist/img/galeri/wastetrash.png",
+    "tags": [
+      "Flutter",
+      "Firebase",
+      "Maps API"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "iCBear Space",
+    "description": "Platform branding dan portfolio untuk iCBear Space dengan desain modern dan user-friendly interface.",
+    "image": "dist/img/galeri/owner-brand-iCBear-Space.png",
+    "tags": [
+      "Web Design",
+      "Branding",
+      "Portfolio"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Modul Pembelajaran",
+    "description": "Sistem pembelajaran online dengan modul interaktif, quiz, dan tracking progress untuk meningkatkan efektivitas belajar.",
+    "image": "dist/img/galeri/modul-pembelajaran.png",
+    "tags": [
+      "LMS",
+      "E-Learning",
+      "Education"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Mini Celpel",
+    "description": "Server mini yang dikembangkan dengan hp android redmi4x dengan bantuan tools termux dan sshd lalu cloudflare sebagai tunneling nya.",
+    "image": "dist/img/galeri/mini_celpel.png",
+    "tags": [
+      "Mobile App",
+      "Management",
+      "Productivity"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "HIMATIK",
+    "description": "Website organisasi HIMATIK dengan informasi kegiatan, berita, dan portal untuk anggota organisasi.",
+    "image": "dist/img/galeri/himatik.png",
+    "tags": [
+      "Web App",
+      "Organization",
+      "Portal"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "DailyQ",
+    "description": "Aplikasi untuk tracking aktivitas anak berkebutuhan khusus dengan fitur reminder, statistik, dan analisis produktivitas.",
+    "image": "dist/img/galeri/dailiq.png",
+    "tags": [
+      "Mobile App",
+      "Tracking",
+      "Analytics"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "BotWaAi",
+    "description": "WhatsApp bot dengan integrasi AI untuk otomasi chat, customer service, dan interaksi cerdas dengan pengguna.",
+    "image": "dist/img/galeri/BotWaAi.png",
+    "tags": [
+      "WhatsApp Bot",
+      "AI",
+      "Automation"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Blogs Management",
+    "description": "Sistem manajemen konten blog dengan editor rich text, kategori, tags, dan fitur SEO untuk optimasi konten.",
+    "image": "dist/img/galeri/blogs-management.png",
+    "tags": [
+      "CMS",
+      "Blog",
+      "Content Management"
+    ]
+  }
+]

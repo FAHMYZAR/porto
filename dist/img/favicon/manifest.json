@@ -1,0 +1,31 @@
+{
+  "name": "Fahmyzzx - Mobile Developer Portfolio",
+  "short_name": "Fahmyzzx",
+  "description": "Portfolio website Nuriskha Ainun Fahmi - Mobile Developer & Freelancer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#26A69A",
+  "icons": [
+    {
+      "src": "/dist/img/favicon/favico-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/dist/img/favicon/favico-57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    },
+    {
+      "src": "/dist/img/favicon/favico-70.png",
+      "sizes": "70x70",
+      "type": "image/png"
+    },
+    {
+      "src": "/dist/img/favicon/favico-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Turbo Cache
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/* "access plus 1 year"
+ExpiresByType text/css "access plus 1 year"
+ExpiresByType application/javascript "access plus 1 year"
+ExpiresByType font/* "access plus 1 year"
+</IfModule>
+
+# Aggressive Compression
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/*
+AddOutputFilterByType DEFLATE application/*
+AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# HTTP/2 Push
+<IfModule mod_http2.c>
+H2PushResource /dist/output.css
+H2PushResource /dist/img/fahmi.png
+</IfModule>
+
+# Preload Headers
+<FilesMatch "\.(html)$">
+Header add Link "</dist/output.css>; rel=preload; as=style"
+Header add Link "</dist/img/fahmi.png>; rel=preload; as=image"
+</FilesMatch>

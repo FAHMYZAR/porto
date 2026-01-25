@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+*.log
+.DS_Store
+Thumbs.db
+
+# Development files (not needed for GitHub Pages)
+postcss.config.js
+tailwind.config.ts
+tailwind.tsconfig.json
+build-zip.js
+DEPLOYMENT.md
+porto-deploy-*.zip
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
