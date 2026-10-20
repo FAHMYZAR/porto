@@ -1,5 +1,124 @@
 [
-
+  {
+    "id": 7,
+    "title": "Membangun Bot WhatsApp Pakai Rust: Kenapa Bukan Node.js Lagi",
+    "excerpt": "Setelah bertahun-tahun pakai Node.js untuk bot WhatsApp, saya mencoba menulis ulang bot utama saya dengan Rust. Hasilnya, pemakaian memori turun jauh dan bot jauh lebih stabil.",
+    "content": "Bot WhatsApp pertama saya ditulis dengan JavaScript memakai library Baileys. Buat kebutuhan awal itu sudah cukup, bot jalan, fitur bertambah, dan pemakainya makin banyak. Masalah mulai terasa ketika bot harus online 24 jam di VPS dengan RAM terbatas. Sekali ada lonjakan pesan atau proses yang bocor sedikit, memori naik terus sampai bot mati dan harus restart.\n\nDari situ saya mulai melirik Rust. Alasan utamanya sederhana, Rust itu compiled dan tidak punya garbage collector, jadi pemakaian memorinya bisa ditebak dan cenderung kecil. Buat program yang harus hidup berhari-hari tanpa diawasi, karakter seperti ini jauh lebih menenangkan dibanding runtime yang memorinya bisa membengkak pelan-pelan.\n\nProses belajarnya memang tidak instan. Konsep ownership dan borrow checker sempat bikin pusing di minggu-minggu pertama, dan error dari compiler terasa galak. Tapi justru di situ enaknya, banyak bug yang biasanya baru ketahuan saat program jalan, sudah ditangkap duluan waktu compile. Setelah lewat fase itu, menulis Rust terasa jauh lebih terkendali.\n\nHasil akhirnya di luar dugaan saya. Bot yang sama, dengan fitur yang sama, sekarang jalan dengan memori yang jauh lebih kecil dan stabil berminggu-minggu tanpa restart. Buat fitur berat seperti memproses video dan gambar, kecepatannya juga terasa beda karena semua diproses native, bukan lewat layer tambahan.\n\nApakah Rust selalu jadi jawaban? Tentu tidak. Buat bot sederhana atau prototipe cepat, Node.js dengan Baileys tetap lebih praktis karena ekosistemnya besar dan contohnya ada di mana-mana. Tapi kalau botmu sudah masuk tahap harus online terus, dipakai banyak orang, dan jalan di server pas-pasan, Rust sangat layak dipertimbangkan.\n\nSaran saya buat yang mau mencoba, jangan langsung menulis ulang semuanya. Mulai dari satu bot kecil atau satu fitur dulu, rasakan dulu cara berpikirnya. Kalau cocok, baru pindahkan yang besar secara bertahap.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-10-18",
+    "category": "Backend",
+    "image": "dist/img/blog/bot-rust.jpg",
+    "tags": [
+      "Rust",
+      "WhatsApp Bot",
+      "Backend"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Rate Limiting API dengan Token Bucket: Cara Simpel Menjaga Server Tetap Waras",
+    "excerpt": "Rate limiting itu bukan cuma soal menolak request. Dengan algoritma token bucket, kita bisa membatasi beban ke server dengan cara yang adil dan gampang dipahami. Ini penjelasan versi praktisnya.",
+    "content": "Setiap API publik pasti menghadapi masalah yang sama, ada saja pengguna atau bot yang mengirim request jauh lebih banyak dari batas wajar. Kalau tidak dibatasi, satu pengguna rakus bisa menghabiskan sumber daya server dan pengguna lain yang normal ikut kena imbasnya. Di sinilah rate limiting berperan.\n\nAlgoritma yang paling sering saya pakai adalah token bucket. Bayangkan sebuah ember yang diisi token dengan kecepatan tetap, misalnya 25 token per detik sampai penuh. Setiap request yang datang harus mengambil satu token dari ember. Kalau tokennya ada, request diproses. Kalau embernya kosong, request ditolak dengan status 429 dan diminta menunggu.\n\nEnaknya token bucket, dia tetap memberi ruang untuk lonjakan sesaat. Selama ember masih punya simpanan token, pengguna boleh mengirim beberapa request sekaligus. Tapi kalau lonjakannya terus-terusan, ember akan kosong dan laju request otomatis turun mengikuti kecepatan isi ulangnya. Adil buat pengguna normal, tetap tegas buat yang berlebihan.\n\nAda satu pelajaran menarik yang saya dapat waktu menguji variasi algoritma ini. Request tidak semuanya sama berat. Ada endpoint yang selesai dalam 5 milidetik, ada yang butuh 300 milidetik karena harus mengolah data. Kalau semua request dihitung satu token, endpoint berat jadi tidak terlindungi. Solusinya, biaya token dibuat dinamis mengikuti beban historis tiap endpoint, misalnya dari rata-rata waktu proses yang diperhalus dengan teknik EWMA.\n\nDengan biaya dinamis, endpoint yang sedang berat otomatis memakan token lebih banyak, jadi pengguna yang membombardir endpoint itu akan lebih cepat kena batas. Sementara endpoint ringan tetap longgar seperti biasa. Hasil ujinya cukup terasa, server lebih stabil saat ada perubahan beban mendadak dibanding pembatasan yang biayanya tetap.\n\nBuat yang baru mulai, versi paling sederhana dari token bucket pun sudah jauh lebih baik daripada tidak ada rate limiting sama sekali. Implementasinya pendek, mudah diuji, dan bisa dikembangkan pelan-pelan sesuai kebutuhan.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-09-27",
+    "category": "Backend",
+    "image": "dist/img/blog/token-bucket.jpg",
+    "tags": [
+      "API",
+      "Rate Limiting",
+      "Backend"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Migrasi Server Tanpa Drama: Checklist dari Pengalaman Pindah VPS",
+    "excerpt": "Memindahkan banyak layanan dari VPS lama ke VPS baru kedengarannya menyeramkan. Setelah menjalaninya sendiri, ternyata kuncinya cuma satu: persiapan dan urutan yang benar.",
+    "content": "VPS lama saya sudah mulai terasa sempit. RAM sering penuh, beberapa layanan berebut sumber daya, dan saya tahu cepat atau lambat harus pindah ke mesin yang lebih lega. Masalahnya, di VPS itu ada banyak layanan yang dipakai harian, dari website, beberapa bot, sampai database. Salah langkah sedikit, semuanya bisa mati bersamaan.\n\nPelajaran pertama, jangan pernah memindahkan dengan cara cut. Semua file dan database saya salin dulu ke server baru, sementara layanan di server lama tetap jalan seperti biasa. Dengan cara ini, kalau ada apa-apa di server baru, saya masih punya waktu memperbaikinya tanpa pengguna merasakan gangguan.\n\nKedua, inventarisasi itu wajib. Saya daftarkan semua layanan yang jalan, port yang dipakai, database yang terkait, dan domain yang menempel. Dari daftar itu baru kelihatan mana yang masih dipakai dan mana yang sebenarnya sudah bisa dimatikan sekalian. Migrasi sekalian jadi momen bersih-bersih.\n\nKetiga, nyalakan layanan di server baru satu per satu, jangan sekaligus. Setiap layanan dites dulu secara lokal, baru dibuka ke publik. Buat layanan yang tidak boleh kehilangan sesi login, seperti bot WhatsApp, sesi disalin terakhir tepat sebelum layanan lama dimatikan, supaya perpindahannya mulus dan tidak perlu login ulang.\n\nKeempat, baca syarat layanan VPS barumu baik-baik sebelum memindahkan apa pun. Tiap provider punya aturan main yang beda, ada batas pemakaian RAM dan CPU, ada juga fitur yang dilarang seperti tunneling atau proxy. Jangan sampai layananmu mati bukan karena error teknis, tapi karena melanggar aturan yang tidak kamu baca.\n\nTerakhir, jangan buru-buru mematikan server lama. Biarkan beberapa hari sebagai cadangan. Kalau ternyata ada yang tertinggal, kamu masih bisa mengambilnya dengan tenang. Migrasi yang baik memang tidak terasa spektakuler, justru karena semuanya berjalan membosankan tanpa drama.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-08-30",
+    "category": "Pengalaman",
+    "image": "dist/img/blog/migrasi-server.jpg",
+    "tags": [
+      "VPS",
+      "Server",
+      "DevOps"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Integrasi AI Gemini ke Aplikasi Web Tanpa Membocorkan API Key",
+    "excerpt": "Menaruh API key Gemini langsung di kode frontend itu undangan buat dicuri orang. Ini cara aman yang saya pakai: pindahkan semua panggilan AI ke backend sendiri yang ringan.",
+    "content": "Waktu pertama kali membuat aplikasi dengan fitur AI, godaan terbesarnya adalah memanggil API Gemini langsung dari frontend. Kodenya pendek, dokumentasinya memang mencontohkan seperti itu, dan dalam lima menit fitur langsung jalan. Masalahnya, API key kamu ikut terbundle ke dalam file JavaScript yang bisa dibaca siapa saja yang membuka situsmu.\n\nItu bukan risiko teori. Ada banyak bot yang tugasnya memindai situs dan repositori publik untuk mencari pola API key. Sekali key kamu ketemu, orang lain bisa memakainya atas nama kuota dan tagihanmu. Kalau key-nya tanpa pembatasan, kerugiannya bisa lebih jauh dari sekadar kuota habis.\n\nSolusi yang saya pakai sekarang adalah backend proxy yang sangat ringan. Frontend tidak lagi memanggil Gemini secara langsung, tapi mengirim permintaan ke endpoint milik sendiri, misalnya /api/gemini. Backend inilah yang menyimpan API key di file .env sisi server, menyusun prompt dan skema jawaban, lalu meneruskan permintaan ke Gemini dan mengembalikan hasilnya.\n\nBackend-nya tidak perlu framework besar. Untuk kebutuhan satu endpoint, satu file server dengan runtime seperti Bun sudah lebih dari cukup, sekaligus bisa bertugas menyajikan file frontend-nya. API key tidak pernah keluar dari server, dan saya bisa menambahkan pembatasan tambahan di lapisan ini, misalnya membatasi ukuran permintaan atau format jawaban yang diterima.\n\nSatu hal lagi yang sering dilupakan, batasi juga key-nya dari sisi Google Cloud Console. Aktifkan pembatasan agar key hanya bisa dipakai untuk API yang memang dibutuhkan. Jadi kalaupun key sampai bocor, ruang geraknya tetap sempit.\n\nPrinsipnya berlaku buat semua API berbayar, bukan cuma Gemini. Anggap API key seperti kata sandi. Tempatnya di server, bukan di kode yang dikirim ke browser pengunjung.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-07-19",
+    "category": "Tutorial",
+    "image": "dist/img/blog/gemini-apikey.jpg",
+    "tags": [
+      "Gemini",
+      "AI",
+      "Keamanan"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Self-Hosting di VPS Murah: Panel, Domain, dan Jebakannya",
+    "excerpt": "Mengelola VPS sendiri itu memuaskan, semua layanan dalam satu kendali. Tapi ada jebakan yang baru terasa setelah jalan: batas RAM, aturan provider, dan domain yang salah atur.",
+    "content": "Ada kepuasan tersendiri waktu semua layananmu jalan di server yang kamu kelola sendiri. Website, bot, API, semuanya dalam satu mesin dan satu kendali. Biaya bulanannya juga jauh lebih murah dibanding berlangganan banyak layanan terpisah. Pengalaman saya setahun terakhir mengelola VPS sendiri mengajari banyak hal yang tidak ada di tutorial.\n\nJebakan pertama adalah sumber daya. VPS murah biasanya memberi RAM yang pas-pasan, dan setiap layanan yang ditambahkan memakan bagiannya sendiri. Database, beberapa runtime, dan satu proses browser untuk otomasi saja sudah bisa membuat RAM menipis. Saya akhirnya membuat watchdog sederhana yang memantau pemakaian RAM dan CPU, lalu menahan atau menghentikan layanan yang melonjak sebelum server dihentikan paksa oleh provider.\n\nJebakan kedua adalah aturan provider yang jarang dibaca. Ada provider yang melarang VPN dan tunneling, ada yang membatasi pemakaian CPU, ada yang otomatis menghentikan server kalau RAM melewati ambang tertentu selama beberapa menit. Semua itu tertulis di syarat layanan, dan melanggarnya bisa berarti server dihapus permanen. Baca dulu sebelum membangun apa pun di atasnya.\n\nSoal domain, saya belajar bahwa tidak semua metode cocok di semua provider. Kalau tunneling dilarang, gunakan fitur reverse proxy resmi dari panel provider untuk mengarahkan domain ke layananmu. Hasilnya sama-sama bisa diakses publik, tapi jalurnya legal dan tidak waswas.\n\nBuat panel pengelolaan, saya malah akhirnya membuat panel sendiri yang ringan untuk menjalankan dan memantau aplikasi di berbagai server. Kedengarannya berlebihan, tapi buat kebutuhan spesifik yang tidak disediakan panel bawaan, membuat sendiri justru lebih pas dan jadi proyek yang menyenangkan.\n\nSelf-hosting cocok buat yang suka ngoprek dan mau belajar cara server bekerja sungguhan. Kalau kamu cuma butuh website yang online tanpa mikir apa-apa, layanan terkelola tetap pilihan yang lebih waras. Tapi buat portofolio dan pengalaman, satu VPS kecil bisa jadi laboratorium terbaik.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-06-14",
+    "category": "Pengalaman",
+    "image": "dist/img/blog/selfhosting.jpg",
+    "tags": [
+      "VPS",
+      "Self-Hosting",
+      "Server"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Bun vs Node.js: Catatan Setelah Migrasi Beberapa Project",
+    "excerpt": "Bun sering dipromosikan sebagai Node.js yang lebih cepat. Setelah memindahkan beberapa project sungguhan, ini catatan jujurnya: mana yang memang lebih enak, dan mana yang masih kalah matang.",
+    "content": "Sebagai pengguna Node.js lama, awalnya saya skeptis dengan Bun. Klaim runtime baru yang berkali-kali lipat lebih cepat biasanya terdengar seperti materi promosi. Tapi rasa penasaran menang, dan saya mulai memindahkan project kecil dulu, lalu berlanjut ke beberapa layanan yang jalan produksi.\n\nYang paling langsung terasa adalah kecepatan start dan instalasi. Bun menjalankan file TypeScript langsung tanpa langkah compile terpisah, dan perintah instalasinya jauh lebih cepat dibanding npm. Buat alur kerja harian yang sering menjalankan ulang server saat mengembangkan, perbedaan kecil ini terkumpul jadi kenyamanan yang nyata.\n\nDari sisi kompatibilitas, sebagian besar project saya pindah tanpa perubahan berarti. API Node.js yang umum sudah didukung, dan package yang saya pakai jalan seperti biasa. Bun juga membawa banyak hal bawaan yang di Node.js perlu library tambahan, seperti membaca file .env, menjalankan test, dan mengelola package, semuanya dalam satu alat.\n\nTapi bukan berarti tanpa catatan. Ekosistem Node.js tetap jauh lebih besar dan matang. Dokumentasi, jawaban forum, dan contoh kode untuk masalah aneh hampir selalu tersedia buat Node.js. Di Bun, sesekali saya ketemu perilaku yang beda tipis dan harus mencari tahu sendiri. Buat project tim besar, faktor kematangan ini tidak bisa dianggap remeh.\n\nKesimpulan saya setelah beberapa bulan, Bun layak jadi pilihan utama buat project pribadi dan layanan kecil sampai menengah, apalagi yang sensitif soal kecepatan start dan kesederhanaan alat. Node.js tetap saya pertahankan buat hal-hal yang menuntut stabilitas maksimal dan dukungan ekosistem seluas-luasnya.\n\nUntungnya ini bukan pilihan yang mengunci. Kode JavaScript dan TypeScript yang rapi bisa jalan di keduanya, jadi kamu bisa mulai dari yang paling nyaman dan berpindah kapan pun kebutuhan berubah.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-05-10",
+    "category": "Technology",
+    "image": "dist/img/blog/bun-node.jpg",
+    "tags": [
+      "Bun",
+      "Node.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Flutter di 2026: Masih Pilihan Tepat buat Mobile?",
+    "excerpt": "Dua tahun lalu saya menulis perbandingan Flutter dan React Native. Sekarang, setelah memakai Flutter di banyak project nyata, ini penilaian ulang saya: masihkah Flutter layak dipilih?",
+    "content": "Pertanyaan ini selalu muncul tiap ada yang mau mulai project mobile baru. Framework silih berganti populer, dan wajar kalau ada yang ragu apakah Flutter masih relevan. Setelah memakainya untuk aplikasi produktivitas, aplikasi lingkungan, sampai aplikasi pendukung pembelajaran, jawaban saya masih sama: Flutter sangat layak, dengan catatan.\n\nKelebihan terbesarnya tetap konsistensi tampilan. Karena Flutter menggambar antarmukanya sendiri, hasil di Android dan iOS nyaris identik tanpa perlu banyak penyesuaian per platform. Buat pengembang solo atau tim kecil, ini menghemat waktu yang luar biasa besar dibanding mengurus dua kode native terpisah.\n\nEkosistemnya juga makin dewasa. Package untuk kebutuhan umum sudah stabil, dukungan state management makin rapi, dan performa di perangkat kelas menengah ke bawah, yang notabene mayoritas pengguna di Indonesia, sudah jauh lebih halus dibanding beberapa tahun lalu.\n\nCatatannya ada di dua hal. Pertama, ukuran aplikasi hasil build masih relatif besar dibanding native murni. Kedua, untuk fitur yang sangat bergantung pada kemampuan terbaru tiap platform, kadang kita tetap harus menulis kode native lewat platform channel. Buat kebanyakan aplikasi bisnis dan produk, dua hal ini jarang jadi masalah besar.\n\nKalau kebutuhanmu adalah aplikasi dengan logika berat di sisi tampilan, animasi yang kaya, dan harus rilis cepat di dua platform, Flutter masih salah satu pilihan paling masuk akal di 2026. Apalagi kalau kamu sudah nyaman dengan Dart, bahasa yang menurut saya justru enak dibaca dan dipelajari.\n\nPada akhirnya framework hanyalah alat. Yang menentukan tetap seberapa paham kamu dengan kebutuhan pengguna dan seberapa konsisten kamu merawat aplikasinya setelah rilis.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2026-03-22",
+    "category": "Mobile Development",
+    "image": "dist/img/blog/flutter-2026.jpg",
+    "tags": [
+      "Flutter",
+      "Mobile Development",
+      "Dart"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Dari HP Android Jadi Server: Eksperimen Termux yang Serius",
+    "excerpt": "HP Android lama yang nganggur di laci ternyata bisa jadi server beneran. Dengan Termux dan sedikit akal, HP Redmi lawas saya pernah menjalankan layanan yang bisa diakses dari internet.",
+    "content": "Di laci saya ada HP Android lama yang sudah tidak dipakai harian. Daripada nganggur, saya penasaran sejauh apa HP ini bisa dimanfaatkan. Jawabannya ternyata jauh, dengan bantuan Termux, HP itu bisa berubah menjadi server Linux mini yang berjalan 24 jam dengan konsumsi listrik yang sangat kecil.\n\nTermux menyediakan lingkungan terminal lengkap di Android tanpa perlu root. Dari situ saya memasang SSH server supaya HP bisa diakses dari laptop, lalu menjalankan beberapa layanan ringan. Buat kebutuhan seperti bot kecil, halaman statis, atau server berkas pribadi, kemampuannya lebih dari cukup.\n\nSupaya bisa diakses dari luar jaringan rumah, saya memakai tunneling dari Cloudflare. Domain diarahkan ke tunnel, dan layanan di HP langsung bisa dibuka dari mana saja tanpa perlu IP publik. Di titik itu rasanya cukup ajaib, sebuah HP tua yang layarnya saja sudah retak, melayani request dari internet seperti server sungguhan.\n\nTentu ada batasnya. HP bukan dirancang untuk menyala terus sambil mengisi daya, jadi suhu dan kesehatan baterai harus diperhatikan. Performanya juga terbatas, layanan berat akan langsung terasa megap-megap. Karena itu saya memakainya buat beban ringan dan keperluan belajar, bukan untuk layanan yang kritis.\n\nTapi justru di situ nilai eksperimennya. Dengan modal nol rupiah, saya belajar banyak soal server, jaringan, dan domain, memakai perangkat yang sudah ada. Banyak konsep yang dulu terasa abstrak jadi konkret karena saya pegang langsung mesinnya.\n\nKalau kamu punya HP Android lama yang nganggur, jangan langsung dijual murah. Coba jadikan server latihan. Ilmu yang didapat dari mengopreknya jauh lebih mahal dari harga HP-nya.",
+    "author": "Nuriskha Ainun Fahmi",
+    "date": "2025-11-30",
+    "category": "Pengalaman",
+    "image": "dist/img/blog/termux-server.jpg",
+    "tags": [
+      "Termux",
+      "Android",
+      "Server"
+    ]
+  },
   {
     "id": 2,
     "title": "Flutter vs React Native: Mana yang Lebih Baik?",
@@ -9,7 +128,12 @@
     "date": "2024-11-12",
     "category": "Technology",
     "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
-    "tags": ["Flutter", "React Native", "Mobile Development", "Comparison"]
+    "tags": [
+      "Flutter",
+      "React Native",
+      "Mobile Development",
+      "Comparison"
+    ]
   },
   {
     "id": 3,
@@ -20,7 +144,12 @@
     "date": "2024-11-10",
     "category": "Showcase",
     "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800",
-    "tags": ["Flutter", "Apps", "Showcase", "Mobile Development"]
+    "tags": [
+      "Flutter",
+      "Apps",
+      "Showcase",
+      "Mobile Development"
+    ]
   },
   {
     "id": 4,
@@ -31,7 +160,12 @@
     "date": "2024-11-08",
     "category": "Learning",
     "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
-    "tags": ["Backend", "Learning", "Career", "Mobile Development"]
+    "tags": [
+      "Backend",
+      "Learning",
+      "Career",
+      "Mobile Development"
+    ]
   },
   {
     "id": 5,
@@ -42,7 +176,12 @@
     "date": "2024-11-05",
     "category": "Design",
     "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800",
-    "tags": ["UI/UX", "Design", "Mobile", "Best Practices"]
+    "tags": [
+      "UI/UX",
+      "Design",
+      "Mobile",
+      "Best Practices"
+    ]
   },
   {
     "id": 6,
@@ -53,7 +192,11 @@
     "date": "2024-11-03",
     "category": "Technology",
     "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
-    "tags": ["Trends", "Technology", "Mobile Development", "2024"]
+    "tags": [
+      "Trends",
+      "Technology",
+      "Mobile Development",
+      "2024"
+    ]
   }
 ]
-

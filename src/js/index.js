@@ -68,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         `<span class="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">${tag}</span>`
                     ).join('');
 
+                    const links = [
+                        item.live ? `<a href="${item.live}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-full hover:bg-primary/90 transition-colors">Live <span aria-hidden="true">&#8599;</span></a>` : '',
+                        item.repo ? `<a href="${item.repo}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 border border-slate-300 text-slate-700 text-xs font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">GitHub</a>` : ''
+                    ].join('');
+                    const linksRow = links
+                        ? `<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-100">${links}</div>`
+                        : '';
+
                     return `
                         <div class="gallery-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 h-full flex flex-col cursor-pointer hover:shadow-xl transform hover:-translate-y-1" 
                              data-image="${item.image}" 
@@ -81,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div class="flex flex-wrap gap-2">
                                     ${tags}
                                 </div>
+                                ${linksRow}
                             </div>
                         </div>
                     `;
@@ -90,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const galleryCards = document.querySelectorAll('.gallery-card');
                 galleryCards.forEach(card => {
                     card.addEventListener('click', (e) => {
+                        if (e.target.closest('a')) return;
                         e.preventDefault();
                         const image = card.getAttribute('data-image');
                         const title = card.getAttribute('data-title');
