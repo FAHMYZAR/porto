@@ -54,6 +54,7 @@
     "description": "Habit tracker berbasis AI. Tempel jadwal atau kebiasaan baru, AI akan bantu menyusun jadwal harian dan mengingatkan lewat chat yang terintegrasi Gemini.",
     "id": 5,
     "image": "dist/img/galeri/habit.jpg",
+    "live": "https://habit.owebku.site",
     "repo": "https://github.com/FAHMYZAR/HABBIT-TRACKER-AI",
     "tags": [
       "React",
@@ -63,10 +64,11 @@
     "title": "Habit Tracker AI"
   },
   {
-    "description": "Bot WhatsApp multi-fitur untuk membantu aktivitas harian: ambil kode presensi dan jadwal kuliah otomatis, presensi, downloader, stiker, info cuaca dan gempa, sampai asisten AI.",
+    "description": "Bot WhatsApp multi-fitur untuk membantu aktivitas harian: downloader, stiker, info cuaca dan gempa, sampai asisten AI.",
     "id": 6,
     "image": "dist/img/galeri/botwav2-og.jpg",
-    "repo": "https://github.com/FAHMYZAR/BotWAv2",
+    "live": "https://wa.me/6285878556744",
+    "repo": "https://github.com/FAHMYZAR/simple_botwa",
     "tags": [
       "WhatsApp Bot",
       "Baileys",
