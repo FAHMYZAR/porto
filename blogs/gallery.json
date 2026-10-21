@@ -1,5 +1,18 @@
 [
   {
+    "description": "API dummy buat latihan praktikum Teknologi Gawai. Tiga resource (buku, menu, event) dengan CRUD lengkap, dokumentasi Swagger, dan rate limit token bucket biar aman dipakai satu kelas.",
+    "id": 19,
+    "image": "dist/img/galeri/dummyapi.jpg",
+    "live": "https://api-dump.owebku.site/",
+    "repo": "https://github.com/FAHMYZAR/dummy-api",
+    "tags": [
+      "Node.js",
+      "REST API",
+      "Swagger"
+    ],
+    "title": "DummyAPI"
+  },
+  {
     "description": "Panel kendali untuk server Pterodactyl. Satu dashboard untuk mengelola semua app: menjalankan, memantau, mengedit file, sampai memasang domain sendiri via Cloudflare Tunnel.",
     "id": 1,
     "image": "dist/img/galeri/controlpetro.jpg",

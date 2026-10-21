@@ -1,13 +1,15 @@
 // Service Worker for instant loading
-const CACHE = 'v3';
+const CACHE = 'v4';
 const FILES = [
   '/',
   '/index.html',
   '/article.html',
+  '/articles.html',
   '/dist/output.css',
   '/dist/js/common.js',
   '/dist/js/index.js',
   '/dist/js/article.js',
+  '/dist/js/articles.js',
   '/dist/img/fahmi.png'
 ];
 
