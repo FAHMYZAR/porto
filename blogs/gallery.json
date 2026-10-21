@@ -66,7 +66,7 @@
   {
     "description": "Bot WhatsApp multi-fitur untuk membantu aktivitas harian: downloader, stiker, info cuaca dan gempa, sampai asisten AI.",
     "id": 6,
-    "image": "dist/img/galeri/botwav2-og.jpg",
+    "image": "dist/img/galeri/botwav2.jpg",
     "live": "https://wa.me/6285878556744",
     "repo": "https://github.com/FAHMYZAR/simple_botwa",
     "tags": [
