@@ -1,6 +1,6 @@
 [
   {
-    "description": "API dummy buat latihan praktikum Teknologi Gawai. Tiga resource (buku, menu, event) dengan CRUD lengkap, dokumentasi Swagger, dan rate limit token bucket biar aman dipakai satu kelas.",
+    "description": "API dummy buat latihan. Tiga resource (buku, menu, event) dengan CRUD lengkap, dokumentasi Swagger, dan rate limit token bucket biar aman dipakai satu kelas.",
     "id": 19,
     "image": "dist/img/galeri/dummyapi.jpg",
     "live": "https://api-dump.owebku.site/",
