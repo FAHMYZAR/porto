@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const btnBase = 'inline-flex items-center justify-center min-w-[2.5rem] px-3 py-2 text-sm font-semibold rounded-full border transition-colors ';
             const btnOff = 'opacity-40 pointer-events-none ';
             function renderPager() {
-                let html = '<button type="button" data-page="prev" aria-label="Halaman sebelumnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
+                let html = '<button type="button" data-page="prev" aria-label="Halaman sebelumnya" ' + (currentPage === 1 ? 'disabled ' : '') + 'class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
                 for (let pg = 1; pg <= totalPages; pg++) {
                     html += '<button type="button" data-page="' + pg + '" class="' + btnBase + (pg === currentPage ? 'bg-primary text-white border-primary' : 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary') + '">' + pg + '</button>';
                 }
-                html += '<button type="button" data-page="next" aria-label="Halaman berikutnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
+                html += '<button type="button" data-page="next" aria-label="Halaman berikutnya" ' + (currentPage === totalPages ? 'disabled ' : '') + 'class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
                 pager.innerHTML = html;
                 pager.querySelectorAll('button[data-page]').forEach(function (btn) {
                     btn.addEventListener('click', function () {
