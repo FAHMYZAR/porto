@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">${relatedArticle.excerpt}</p>
                         <div class="flex items-center justify-between pt-2 border-t border-slate-100">
                             <span class="text-xs text-slate-500">${date}</span>
-                            <a href="article.html?id=${relatedArticle.id}" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
+                            <a href="articles/${relatedArticle.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
                                 Baca <span>→</span>
                             </a>
                         </div>

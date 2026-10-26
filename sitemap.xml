@@ -2,20 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://fahmyzzx.my.id/</loc>
-        <lastmod>2026-10-21</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://fahmyzzx.my.id/articles.html</loc>
-        <lastmod>2026-10-21</lastmod>
+        <lastmod>2026-10-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://fahmyzzx.my.id/article.html</loc>
-        <lastmod>2026-10-20</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://fahmyzzx.my.id/articles/membangun-bot-whatsapp-pakai-rust-kenapa-bukan-node-js-lagi.html</loc>
+        <lastmod>2026-10-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/rate-limiting-api-dengan-token-bucket-cara-simpel-menjaga-server-tetap-waras.html</loc>
+        <lastmod>2026-09-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/migrasi-server-tanpa-drama-checklist-dari-pengalaman-pindah-vps.html</loc>
+        <lastmod>2026-08-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/integrasi-ai-gemini-ke-aplikasi-web-tanpa-membocorkan-api-key.html</loc>
+        <lastmod>2026-07-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/self-hosting-di-vps-murah-panel-domain-dan-jebakannya.html</loc>
+        <lastmod>2026-06-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/bun-vs-node-js-catatan-setelah-migrasi-beberapa-project.html</loc>
+        <lastmod>2026-05-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/flutter-di-2026-masih-pilihan-tepat-buat-mobile.html</loc>
+        <lastmod>2026-03-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/dari-hp-android-jadi-server-eksperimen-termux-yang-serius.html</loc>
+        <lastmod>2025-11-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/flutter-vs-react-native-mana-yang-lebih-baik.html</loc>
+        <lastmod>2024-11-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/5-aplikasi-mobile-terbaik-yang-dibuat-dengan-flutter.html</loc>
+        <lastmod>2024-11-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/mengapa-belajar-backend-development-penting-untuk-mobile-developer.html</loc>
+        <lastmod>2024-11-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/best-practices-untuk-ui-ux-design-di-aplikasi-mobile.html</loc>
+        <lastmod>2024-11-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fahmyzzx.my.id/articles/tren-teknologi-mobile-development-di-2024.html</loc>
+        <lastmod>2024-11-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 </urlset>
