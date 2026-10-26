@@ -2,7 +2,7 @@
   {
     "description": "API dummy buat latihan. Tiga resource (buku, menu, event) dengan CRUD lengkap, dokumentasi Swagger, dan rate limit token bucket biar aman dipakai satu kelas.",
     "id": 19,
-    "image": "dist/img/galeri/dummyapi.jpg",
+    "image": "dist/img/galeri/dummyapi.webp",
     "live": "https://api-dump.owebku.site/",
     "repo": "https://github.com/FAHMYZAR/dummy-api",
     "tags": [
@@ -15,7 +15,7 @@
   {
     "description": "Panel kendali untuk server Pterodactyl. Satu dashboard untuk mengelola semua app: menjalankan, memantau, mengedit file, sampai memasang domain sendiri via Cloudflare Tunnel.",
     "id": 1,
-    "image": "dist/img/galeri/controlpetro.jpg",
+    "image": "dist/img/galeri/controlpetro.webp",
     "live": "https://srv9.owebku.site/",
     "repo": "https://github.com/FAHMYZAR/ControlPetro",
     "tags": [
@@ -28,7 +28,7 @@
   {
     "description": "Platform streaming film dan series dengan katalog dari banyak sumber, fitur pencarian, dan nonton bareng (nobar) dengan sinkronisasi playback antar penonton.",
     "id": 2,
-    "image": "dist/img/galeri/faraflix.jpg",
+    "image": "dist/img/galeri/faraflix.webp",
     "live": "https://nonton-film.disitus.web.id/",
     "tags": [
       "Bun",
@@ -40,7 +40,7 @@
   {
     "description": "Aplikasi web berbasis PHP Native MVC untuk membuat, mengedit, mengelola, dan mem-publish project website statis langsung dari browser.",
     "id": 3,
-    "image": "dist/img/galeri/owebku.jpg",
+    "image": "dist/img/galeri/owebku.webp",
     "live": "https://owebku.site/",
     "repo": "https://github.com/FAHMYZAR/owebku",
     "tags": [
@@ -53,7 +53,7 @@
   {
     "description": "Habit tracker berbasis AI. Tempel jadwal atau kebiasaan baru, AI akan bantu menyusun jadwal harian dan mengingatkan lewat chat yang terintegrasi Gemini.",
     "id": 5,
-    "image": "dist/img/galeri/habit.jpg",
+    "image": "dist/img/galeri/habit.webp",
     "live": "https://habit.owebku.site",
     "repo": "https://github.com/FAHMYZAR/HABBIT-TRACKER-AI",
     "tags": [
@@ -66,7 +66,7 @@
   {
     "description": "Bot WhatsApp multi-fitur untuk membantu aktivitas harian: downloader, stiker, info cuaca dan gempa, sampai asisten AI.",
     "id": 6,
-    "image": "dist/img/galeri/botwav2.jpg",
+    "image": "dist/img/galeri/botwav2.webp",
     "live": "https://wa.me/6285878556744",
     "repo": "https://github.com/FAHMYZAR/simple_botwa",
     "tags": [
@@ -79,7 +79,7 @@
   {
     "description": "WhatsApp bot yang ditulis dengan Rust dan terintegrasi AI untuk otomasi chat, generate dan edit gambar, sampai konversi video dan stiker langsung dari percakapan.",
     "id": 7,
-    "image": "dist/img/galeri/BotWaAi.jpg",
+    "image": "dist/img/galeri/BotWaAi.webp",
     "repo": "https://github.com/FAHMYZAR/wa-rust",
     "tags": [
       "Rust",
@@ -91,7 +91,7 @@
   {
     "description": "Website tugas dan praktikum kuliah yang berisi kumpulan project mata kuliah, dikelola langsung dari satu portal.",
     "id": 8,
-    "image": "dist/img/galeri/tugas-kuliah.jpg",
+    "image": "dist/img/galeri/tugas-kuliah.webp",
     "live": "https://tugas-fahmy.owebku.site/",
     "repo": "https://github.com/FAHMYZAR/TugasKuliah",
     "tags": [
@@ -104,7 +104,7 @@
   {
     "description": "Website undangan pernikahan digital dengan desain elegan, galeri foto, RSVP, dan amplop digital yang bisa dibagikan lewat satu link.",
     "id": 10,
-    "image": "dist/img/galeri/weedings.jpg",
+    "image": "dist/img/galeri/weedings.webp",
     "repo": "https://github.com/FAHMYZAR/weedings",
     "tags": [
       "TypeScript",
@@ -117,7 +117,7 @@
   {
     "description": "Website konser dan festival musik yang dibuat untuk tugas bersama, berisi info acara, lineup, dan pembelian tiket.",
     "id": 11,
-    "image": "dist/img/galeri/web-konser.jpg",
+    "image": "dist/img/galeri/web-konser.webp",
     "live": "https://fahmyzar.github.io/web-konser/",
     "repo": "https://github.com/FAHMYZAR/web-konser",
     "tags": [
@@ -130,7 +130,7 @@
   {
     "description": "Aplikasi mobile untuk pengelolaan sampah dengan fitur tracking, edukasi, dan reward system untuk mendorong masyarakat peduli lingkungan.",
     "id": 12,
-    "image": "dist/img/galeri/wastetrash.jpg",
+    "image": "dist/img/galeri/wastetrash.webp",
     "tags": [
       "Flutter",
       "Firebase",
@@ -141,7 +141,7 @@
   {
     "description": "Aplikasi untuk membantu anak berkebutuhan khusus mengungkapkan keinginan dan kebutuhan sehari-hari, dilengkapi tracking aktivitas dan reminder.",
     "id": 13,
-    "image": "dist/img/galeri/dailiq.jpg",
+    "image": "dist/img/galeri/dailiq.webp",
     "repo": "https://github.com/FAHMYZAR/Daily-Q",
     "tags": [
       "Mobile App",
@@ -153,7 +153,7 @@
   {
     "description": "Platform branding dan portfolio untuk iCBear Space dengan desain modern dan user-friendly interface.",
     "id": 14,
-    "image": "dist/img/galeri/owner-brand-iCBear-Space.jpg",
+    "image": "dist/img/galeri/owner-brand-iCBear-Space.webp",
     "tags": [
       "Web Design",
       "Branding",
@@ -164,7 +164,7 @@
   {
     "description": "Sistem pembelajaran online dengan modul interaktif, quiz, dan tracking progress untuk meningkatkan efektivitas belajar.",
     "id": 15,
-    "image": "dist/img/galeri/modul-pembelajaran.jpg",
+    "image": "dist/img/galeri/modul-pembelajaran.webp",
     "tags": [
       "LMS",
       "E-Learning",
@@ -175,7 +175,7 @@
   {
     "description": "Website organisasi HIMATIK dengan informasi kegiatan, berita, dan portal untuk anggota organisasi.",
     "id": 16,
-    "image": "dist/img/galeri/himatik.jpg",
+    "image": "dist/img/galeri/himatik.webp",
     "tags": [
       "Web App",
       "Organization",
@@ -186,7 +186,7 @@
   {
     "description": "Server mini yang dikembangkan dengan HP Android Redmi 4X dengan bantuan Termux dan SSH, lalu Cloudflare sebagai tunneling-nya.",
     "id": 17,
-    "image": "dist/img/galeri/mini_celpel.jpg",
+    "image": "dist/img/galeri/mini_celpel.webp",
     "tags": [
       "Server",
       "Termux",
@@ -197,7 +197,7 @@
   {
     "description": "Sistem manajemen konten blog dengan editor rich text, kategori, tags, dan fitur SEO untuk optimasi konten.",
     "id": 18,
-    "image": "dist/img/galeri/blogs-management.jpg",
+    "image": "dist/img/galeri/blogs-management.webp",
     "tags": [
       "CMS",
       "Blog",

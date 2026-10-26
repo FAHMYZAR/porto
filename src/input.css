@@ -53,7 +53,7 @@ html {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../dist/fonts/inter/Inter_24pt-Regular.ttf') format('truetype');
+    src: url('../dist/fonts/inter/Inter_24pt-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -61,7 +61,7 @@ html {
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('../dist/fonts/inter/Inter_24pt-Medium.ttf') format('truetype');
+    src: url('../dist/fonts/inter/Inter_24pt-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -69,7 +69,7 @@ html {
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('../dist/fonts/inter/Inter_24pt-SemiBold.ttf') format('truetype');
+    src: url('../dist/fonts/inter/Inter_24pt-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -77,7 +77,7 @@ html {
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../dist/fonts/inter/Inter_24pt-Bold.ttf') format('truetype');
+    src: url('../dist/fonts/inter/Inter_24pt-Bold.woff2') format('woff2');
 }
 
 /* Poppins Font Family - supports both TTF and WOFF2 formats */
@@ -86,7 +86,7 @@ html {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('../dist/fonts/poppins/Poppins-Regular.ttf') format('truetype');
+    src: url('../dist/fonts/poppins/Poppins-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -94,7 +94,7 @@ html {
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url('../dist/fonts/poppins/Poppins-SemiBold.ttf') format('truetype');
+    src: url('../dist/fonts/poppins/Poppins-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -102,7 +102,7 @@ html {
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('../dist/fonts/poppins/Poppins-Bold.ttf') format('truetype');
+    src: url('../dist/fonts/poppins/Poppins-Bold.woff2') format('woff2');
 }
 
 /* Apply fonts */

@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                     <div class="p-5 md:p-6">
-                        <h4 class="font-bold text-dark text-base md:text-lg mb-2 line-clamp-2 leading-tight">${relatedArticle.title}</h4>
+                        <h3 class="font-bold text-dark text-base md:text-lg mb-2 line-clamp-2 leading-tight">${relatedArticle.title}</h3>
                         <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">${relatedArticle.excerpt}</p>
                         <div class="flex items-center justify-between pt-2 border-t border-slate-100">
                             <span class="text-xs text-slate-500">${date}</span>
-                            <a href="articles/${relatedArticle.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
+                            <a href="articles/${relatedArticle.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" aria-label="Baca artikel ${relatedArticle.title}">
                                 Baca <span>→</span>
                             </a>
                         </div>

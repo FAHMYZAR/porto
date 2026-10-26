@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', function () {
                     </div>
                 </div>
                 <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="font-bold text-dark text-xl mb-3 leading-tight">${article.title}</h3>
+                    <h2 class="font-bold text-dark text-xl mb-3 leading-tight">${article.title}</h2>
                     <p class="text-slate-600 text-xs mb-4 flex-grow leading-relaxed line-clamp-2">${article.excerpt}</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         ${tags}
                     </div>
                     <div class="flex items-center justify-between pt-4 border-t border-slate-200">
                         <span class="text-xs text-slate-500">${date}</span>
-                        <a href="articles/${article.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
+                        <a href="articles/${article.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" aria-label="Baca artikel ${article.title}">
                             Baca <span>→</span>
                         </a>
                     </div>
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const btnBase = 'inline-flex items-center justify-center min-w-[2.5rem] px-3 py-2 text-sm font-semibold rounded-full border transition-colors ';
             const btnOff = 'opacity-40 pointer-events-none ';
             function renderPager() {
-                let html = '<button type="button" data-page="prev" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
+                let html = '<button type="button" data-page="prev" aria-label="Halaman sebelumnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
                 for (let pg = 1; pg <= totalPages; pg++) {
                     html += '<button type="button" data-page="' + pg + '" class="' + btnBase + (pg === currentPage ? 'bg-primary text-white border-primary' : 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary') + '">' + pg + '</button>';
                 }
-                html += '<button type="button" data-page="next" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
+                html += '<button type="button" data-page="next" aria-label="Halaman berikutnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
                 pager.innerHTML = html;
                 pager.querySelectorAll('button[data-page]').forEach(function (btn) {
                     btn.addEventListener('click', function () {

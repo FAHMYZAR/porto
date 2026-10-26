@@ -8,7 +8,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-10-18",
     "category": "Backend",
-    "image": "dist/img/blog/bot-rust.jpg",
+    "image": "dist/img/blog/bot-rust.webp",
     "tags": [
       "Rust",
       "WhatsApp Bot",
@@ -24,7 +24,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-09-27",
     "category": "Backend",
-    "image": "dist/img/blog/token-bucket.jpg",
+    "image": "dist/img/blog/token-bucket.webp",
     "tags": [
       "API",
       "Rate Limiting",
@@ -40,7 +40,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-08-30",
     "category": "Pengalaman",
-    "image": "dist/img/blog/migrasi-server.jpg",
+    "image": "dist/img/blog/migrasi-server.webp",
     "tags": [
       "VPS",
       "Server",
@@ -56,7 +56,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-07-19",
     "category": "Tutorial",
-    "image": "dist/img/blog/gemini-apikey.jpg",
+    "image": "dist/img/blog/gemini-apikey.webp",
     "tags": [
       "Gemini",
       "AI",
@@ -72,7 +72,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-06-14",
     "category": "Pengalaman",
-    "image": "dist/img/blog/selfhosting.jpg",
+    "image": "dist/img/blog/selfhosting.webp",
     "tags": [
       "VPS",
       "Self-Hosting",
@@ -88,7 +88,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-05-10",
     "category": "Technology",
-    "image": "dist/img/blog/bun-node.jpg",
+    "image": "dist/img/blog/bun-node.webp",
     "tags": [
       "Bun",
       "Node.js",
@@ -104,7 +104,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2026-03-22",
     "category": "Mobile Development",
-    "image": "dist/img/blog/flutter-2026.jpg",
+    "image": "dist/img/blog/flutter-2026.webp",
     "tags": [
       "Flutter",
       "Mobile Development",
@@ -120,7 +120,7 @@
     "author": "Nuriskha Ainun Fahmi",
     "date": "2025-11-30",
     "category": "Pengalaman",
-    "image": "dist/img/blog/termux-server.jpg",
+    "image": "dist/img/blog/termux-server.webp",
     "tags": [
       "Termux",
       "Android",

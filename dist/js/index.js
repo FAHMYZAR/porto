@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </div>
                                 <div class="flex items-center justify-between pt-4 border-t border-slate-200">
                                     <span class="text-xs text-slate-500">${date}</span>
-                                    <a href="articles/${article.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1">
+                                    <a href="articles/${article.slug}.html" class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" aria-label="Baca artikel ${article.title}">
                                         Baca <span>→</span>
                                     </a>
                                 </div>
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     ).join('');
 
                     const links = [
-                        item.live ? `<a href="${item.live}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-full hover:bg-primary/90 transition-colors">Live <span aria-hidden="true">&#8599;</span></a>` : '',
-                        item.repo ? `<a href="${item.repo}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 border border-slate-300 text-slate-700 text-xs font-semibold rounded-full hover:border-primary hover:text-primary transition-colors">GitHub</a>` : ''
+                        item.live ? `<a href="${item.live}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 bg-primary text-white text-xs font-semibold rounded-full hover:bg-primary/90 transition-colors" aria-label="Buka demo ${item.title}">Live <span aria-hidden="true">&#8599;</span></a>` : '',
+                        item.repo ? `<a href="${item.repo}" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-4 py-2 border border-slate-300 text-slate-700 text-xs font-semibold rounded-full hover:border-primary hover:text-primary transition-colors" aria-label="Buka repo ${item.title}">GitHub</a>` : ''
                     ].join('');
                     const linksRow = links
                         ? `<div class="flex flex-wrap gap-2 mt-4 pt-4 border-t border-slate-100">${links}</div>`
@@ -120,11 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const btnBase = 'inline-flex items-center justify-center min-w-[2.5rem] px-3 py-2 text-sm font-semibold rounded-full border transition-colors ';
                     const btnOff = 'opacity-40 pointer-events-none ';
                     function renderPager() {
-                        let html = '<button type="button" data-page="prev" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
+                        let html = '<button type="button" data-page="prev" aria-label="Halaman sebelumnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === 1 ? btnOff : '') + '">&#8592;</button>';
                         for (let pg = 1; pg <= totalPages; pg++) {
                             html += '<button type="button" data-page="' + pg + '" class="' + btnBase + (pg === currentPage ? 'bg-primary text-white border-primary' : 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary') + '">' + pg + '</button>';
                         }
-                        html += '<button type="button" data-page="next" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
+                        html += '<button type="button" data-page="next" aria-label="Halaman berikutnya" class="' + btnBase + 'border-slate-300 text-slate-700 bg-white hover:border-primary hover:text-primary ' + (currentPage === totalPages ? btnOff : '') + '">&#8594;</button>';
                         pager.innerHTML = html;
                         pager.querySelectorAll('button[data-page]').forEach(function (btn) {
                             btn.addEventListener('click', function () {
