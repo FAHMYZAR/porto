@@ -1,5 +1,5 @@
 // Service Worker for instant loading
-const CACHE = 'v5';
+const CACHE = 'v6';
 const FILES = [
   '/',
   '/index.html',
@@ -10,7 +10,8 @@ const FILES = [
   '/dist/js/index.js',
   '/dist/js/article.js',
   '/dist/js/articles.js',
-  '/dist/img/fahmi.png'
+  '/dist/img/fahmi.png',
+  '/dist/img/fahmi.webp'
 ];
 
 self.addEventListener('install', e => {

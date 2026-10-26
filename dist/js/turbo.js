@@ -2,7 +2,7 @@
 const turbo = {
     // Critical CSS inline
     inlineCSS() {
-        const css = `body{font-family:system-ui;margin:0}nav{position:fixed;top:0;width:100%;background:#fff;z-index:50}.hero{padding:6rem 1rem 2rem;text-align:center}.btn{background:#26A69A;color:#fff;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;display:inline-block}`;
+        const css = `body{font-family:system-ui;margin:0}nav{position:fixed;top:0;width:100%;background:#fff;z-index:50}.hero{padding:6rem 1rem 2rem;text-align:center}.btn{background:#0f766e;color:#fff;padding:0.75rem 1.5rem;border-radius:0.5rem;text-decoration:none;display:inline-block}`;
         const style = document.createElement('style');
         style.textContent = css;
         document.head.appendChild(style);
@@ -10,6 +10,7 @@ const turbo = {
 
     // Defer heavy resources
     deferLoad() {
+        if (document.querySelector('link[href="./dist/output.css"], link[href="dist/output.css"]')) return;
         setTimeout(() => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
