@@ -1,5 +1,18 @@
 [
   {
+    "description": "Portal filter real-time dari gerakan tangan, langsung di browser. Buka dua tangan, portal muncul, area di dalamnya kena filter.",
+    "id": 20,
+    "image": "dist/img/galeri/handportal.webp",
+    "live": "https://tracking.owebku.site/",
+    "repo": "https://github.com/FAHMYZAR/mediapipe-hand-portal",
+    "tags": [
+      "MediaPipe",
+      "JavaScript",
+      "Computer Vision"
+    ],
+    "title": "HandPortal"
+  },
+  {
     "description": "API dummy buat latihan. Tiga resource (buku, menu, event) dengan CRUD lengkap, dokumentasi Swagger, dan rate limit token bucket biar aman dipakai satu kelas.",
     "id": 19,
     "image": "dist/img/galeri/dummyapi.webp",
