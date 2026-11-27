@@ -4,6 +4,7 @@
     "id": 22,
     "image": "dist/img/galeri/kalcer.webp",
     "live": "https://kalcer.owebku.site",
+    "repo": "https://github.com/FAHMYZAR/kalcer",
     "tags": [
       "JavaScript",
       "Kesehatan",
@@ -16,6 +17,7 @@
     "id": 21,
     "image": "dist/img/galeri/astro-space.webp",
     "live": "https://astro.owebku.site",
+    "repo": "https://github.com/FAHMYZAR/astro-space",
     "tags": [
       "Three.js",
       "WebAR",
